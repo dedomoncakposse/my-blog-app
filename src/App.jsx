@@ -13,7 +13,7 @@ function App() {
   }, []);
 
   function fetchPosts() {
-    fetch('http://localhost:3000/api/posts')
+    fetch('https://my-blog-production-a0cc.up.railway.app/api/posts')
       .then(function(response) { return response.json(); })
       .then(function(data) { setPosts(data); });
   }
@@ -117,7 +117,7 @@ function LoginPage({ setLoggedIn, setUser, setToken, setPage }) {
   const [message, setMessage] = useState('');
 
   function login() {
-    fetch('http://localhost:3000/api/login', {
+    fetch('https://my-blog-production-a0cc.up.railway.app/api/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, password })
