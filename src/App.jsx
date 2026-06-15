@@ -164,7 +164,7 @@ function RegisterPage({ setPage }) {
   const [message, setMessage] = useState('');
 
   function register() {
-    fetch('my-blog-production-a0cc.up.railway.app/api/register', {
+    fetch('https://my-blog-production-a0cc.up.railway.app/api/register', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name, email, password })
@@ -215,7 +215,7 @@ function CreatePost({ user, fetchPosts, setPage }) {
       return;
     }
 
-    fetch('my-blog-production-a0cc.up.railway.app/api/posts', {
+    fetch('https://my-blog-production-a0cc.up.railway.app/api/posts', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ title, content, author: user })
@@ -257,7 +257,7 @@ function SinglePost({ post, loggedIn, fetchPosts, setPage }) {
   const [message, setMessage] = useState('');
 
   function updatePost() {
-    fetch('my-blog-production-a0cc.up.railway.app/api/posts/' + post.id, {
+    fetch('https://my-blog-production-a0cc.up.railway.app/api/posts/' + post.id, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ title, content })
@@ -272,7 +272,7 @@ function SinglePost({ post, loggedIn, fetchPosts, setPage }) {
 
   function deletePost() {
     if (window.confirm('Are you sure you want to delete this post?')) {
-      fetch('my-blog-production-a0cc.up.railway.app/api/posts/' + post.id, {
+      fetch('https://my-blog-production-a0cc.up.railway.app/api/posts/' + post.id, {
         method: 'DELETE'
       })
       .then(function(response) { return response.json(); })
