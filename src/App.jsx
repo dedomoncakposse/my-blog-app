@@ -267,6 +267,8 @@ function SinglePost({ post, loggedIn, fetchPosts, setPage }) {
       setMessage(data.message);
       setEditing(false);
       fetchPosts();
+      post.title = title;
+      post.content = content;
     });
   }
 
